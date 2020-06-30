@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="eaddr" class="com.xml.autowiring.Address">
+<property name="hno" value="23/3rt" />
+		<property name="street" value="PS Road" />
+		<property name="city" value="Hyd" />
+		<property name="state" value="Tel" />
+</bean>
+<bean id="eacc" class="com.xml.autowiring.Account">
+	<property name="accNo" value="abc123" />
+		<property name="accName" value="Durga" />
+		<property name="accType" value="Savings" />
+		<property name="balance" value="20000" />
+</bean>
+<bean id="eacc2" class="com.xml.autowiring.Account" autowire-candidate="false">
+	<property name="accNo" value="xyz123" />
+		<property name="accName" value="Krishn" />
+		<property name="accType" value="Savings" />
+		<property name="balance" value="50000" />
+</bean>
+<bean id="emp" class="com.xml.autowiring.EmployeeConst"  autowire="constructor">
+<constructor-arg name="eid" value="E-111"/>
+<constructor-arg name="ename" value="Durga"/>
+<!--
+<constructor-arg ref="eaddr"/>
+<constructor-arg ref="eacc"/>  -->
+</bean>
+</beans>

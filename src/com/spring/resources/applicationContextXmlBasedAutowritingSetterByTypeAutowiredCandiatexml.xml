@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="eaddrBean" class="com.xml.autowiring.Address">
+		<property name="hno" value="23/3rt" />
+		<property name="street" value="PS Road" />
+		<property name="city" value="Hyd" />
+		<property name="state" value="Tel" />
+	</bean>
+	<bean id="account1" class="com.xml.autowiring.Account" autowire-candidate="false">
+		<property name="accNo" value="abc123" />
+		<property name="accName" value="Durga" />
+		<property name="accType" value="Savings" />
+		<property name="balance" value="20000" />
+	</bean>
+		<bean id="account2" class="com.xml.autowiring.Account" >
+		<property name="accNo" value="xyz123" />
+		<property name="accName" value="Srini" />
+		<property name="accType" value="Savings" />
+		<property name="balance" value="50000" />
+	</bean>
+	
+	<bean id="emp" class="com.xml.autowiring.Employee" autowire="byType">
+		<property name="eid" value="E-111" />
+		<property name="ename" value="Durga" />
+		<!-- <property name="eaddr" ref="eaddr"/> 
+		<property name="eacc" ref="eacc"/> -->
+	</bean>	
+</beans>
+

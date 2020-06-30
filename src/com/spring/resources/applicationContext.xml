@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="helloBean" class="com.spring.beans.HelloBean">
+		<property name="name" value="Spring" />
+	</bean>
+
+	<bean id="user" class="com.spring.beans.User">
+		<property name="uname" value="Srini" />
+		<property name="uaddr" value="Danville" />
+		<property name="uemail" value="Srini@gmail.com" />
+	</bean>
+
+
+	<bean id="emp" class="com.spring.beans.nested.Employee">
+		<property name="eid" value="E-111" />
+		<property name="ename" value="Srinivas" />
+		<property name="esal" value="90000" />
+		<property name="eaddr" value="Danville" />
+		<property name="acc">
+			<bean id="account" class="com.spring.beans.nested.Account">
+				<property name="accNo" value="abc123" />
+				<property name="accName" value="Srinivas" />
+				<property name="accType" value="Savings" />
+				<property name="balance" value="20000" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="cust"
+		class="com.spring.beans.beanPostProcessor.Customer" init-method="init"
+		destroy-method="destroy">
+		<property name="cid" value="C-111" />
+		<property name="cname" value="Srini" />
+		<property name="caddr" value="Hyd" />
+	</bean>
+	<bean
+		class="com.spring.beans.beanPostProcessor.BeanPostProcessorImpl" />
+
+
+</beans>
+		
+
+
+
+

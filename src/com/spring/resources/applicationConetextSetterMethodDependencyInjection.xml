@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="acc" class="com.ioc.setterMethodDependencyInjection.Account">
+		<property name="accNo" value="abc123" />
+		<property name="accName" value="Srini" />
+		<property name="accType" value="Savings" />
+		<property name="balance" value="25000" />
+	</bean>
+	<bean id="emp" class="com.ioc.setterMethodDependencyInjection.Employee">
+		<property name="eid" value="E-111" />
+		<property name="ename" value="Srini" />
+		<property name="esal" value="50000" />
+		<property name="eaddr" value="York" />
+		<property name="acc" ref="acc" />
+	</bean>
+</beans>

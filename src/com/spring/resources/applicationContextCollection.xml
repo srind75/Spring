@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="addr" class="com.spring.collection.Address">
+		<property name="pno" value="202" />
+		<property name="street" value="w Side Rd" />
+		<property name="city" value="Gaitherburg" />
+		<property name="country" value="USA" />
+	</bean>
+	<bean id="std" class="com.spring.collection.Student">
+		<property name="sid" value="S-111" />
+		<property name="sname" value="Krish" />
+		<property name="saddr">
+			<ref bean="addr" />
+		</property>
+		<property name="squal">
+			<list>
+				<value>BTech</value>
+				<value>MTech</value>
+				<value>PHD</value>
+			</list>
+		</property>
+		<property name="scourses">
+			<set>
+				<value>Mechanical</value>
+				<value>Electrical</value>
+				<value>Electronics</value>
+				<value>Civil</value>
+				<value>ComputerScience</value>
+			</set>
+		</property>
+		<property name="scourses_And_Faculty">
+			<map>
+				<entry key="Mechanical" value="Ratan" />
+				<entry key="Electrical" value="Krish" />
+				<entry key="Electronics" value="Sriman" />
+				<entry key="Civil" value="Venkat" />
+				<entry key="ComputerScience" value="Subash" />
+			</map>
+		</property>
+		<property name="scourse_And_Cost">
+			<props>
+				<prop key="Mechanical">1500</prop>
+				<prop key="Electrical">2000</prop>
+				<prop key="Electronics">3000</prop>
+				<prop key="Civil">3000</prop>
+				<prop key="ComputerScience">3000</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
